@@ -1,0 +1,36 @@
+server:
+  servlet:
+    context-path: /ms-the-library-operator/api/v1
+  port: 8094
+app:
+  authUri: ""
+  ignoreSession: true
+  allowedOrigins: "*"
+  allowedMethods: POST, GET, PUT, DELETE, OPTIONS
+  allowedHeaders: Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods,Accept,Authorization,Content-Type,Method,Origin,X-Forwarded-For,X-Real-IP
+  allowedPaths: /actuator
+spring:
+  application:
+    name: ms-the-library-operator
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 1234
+    tomcat:
+      connection-properties: useUnicode=true;characterEncoding=utf-8;
+    hikari:
+      minimumIdle: 4
+      maximumPoolSize: 8
+      idleTimeout: 15000
+      poolName:
+      maxLifetime: 180000
+      connectionTimeout: 30000
+    sql:
+      init:
+        encoding: UTF-8
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: false
+      hibernate:
+        ddl-auto: none
