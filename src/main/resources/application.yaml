@@ -13,7 +13,7 @@ spring:
   application:
     name: ms-the-library-operator
   datasource:
-    url: jdbc:postgresql://localhost:5432/thelibray
+    url: jdbc:postgresql://localhost:5432/thelibrary
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: 1234

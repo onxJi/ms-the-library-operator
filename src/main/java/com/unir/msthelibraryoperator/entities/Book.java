@@ -18,7 +18,6 @@ public class Book {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "volume_info_id")
-    @JsonBackReference
     private VolumeInfo volumeInfo;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)

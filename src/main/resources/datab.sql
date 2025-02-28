@@ -67,3 +67,9 @@ CREATE TABLE industry_identifiers (
 );
 
 
+CREATE TABLE volume_categories (
+        volume_info_id BIGINT REFERENCES volume_info(id),
+        category VARCHAR(255)
+);
+
+

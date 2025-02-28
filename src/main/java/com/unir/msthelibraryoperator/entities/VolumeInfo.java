@@ -19,13 +19,14 @@ public class VolumeInfo {
     private String maturityRating;
     private Boolean allowAnonLogging;
     private String contentVersion;
-    private String language;
+    private String bookLanguage;
     private String previewLink;
     private String infoLink;
     private String canonicalVolumeLink;
 
     @ElementCollection
     @CollectionTable(name = "volume_authors", joinColumns = @JoinColumn(name = "volume_info_id"))
+    @Column(name = "author") // Especifica explícitamente el nombre de la columna
     private List<String> authors;
 
     @OneToMany(mappedBy = "volumeInfo", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -33,6 +34,7 @@ public class VolumeInfo {
 
     @ElementCollection
     @CollectionTable(name = "volume_categories", joinColumns = @JoinColumn(name = "volume_info_id"))
+    @Column(name = "categories")
     private List<String> categories;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
